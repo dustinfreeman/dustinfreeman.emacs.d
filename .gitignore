@@ -1,2 +1,5 @@
-/auto-save-list
-/elpa/*
+*
+
+!.gitignore
+!.init.el
+
