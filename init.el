@@ -40,3 +40,6 @@
 ;; I'd love to have the bash shell hosting emacs, and emacs, to
 ;; share history. I'd love to. This may do that.
 (savehist-mode 1)
+
+;; Most used for when discarding changes in git shell
+(global-auto-revert-mode)
