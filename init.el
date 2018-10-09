@@ -28,7 +28,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages (quote (omnisharp csv-mode))))
+ '(package-selected-packages
+   (quote
+    (## persistent-scratch markdown-mode shx omnisharp csv-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -43,3 +45,18 @@
 
 ;; Most used for when discarding changes in git shell
 (global-auto-revert-mode)
+
+;; for gcloud ssh
+;; https://qiita.com/tanatana/items/218b19808f2428b125fe
+(require 'tramp)
+(add-to-list 'tramp-methods
+  '("gcssh"
+    (tramp-login-program        "gcloud compute ssh")
+    (tramp-login-args           (("%h")))
+    (tramp-async-args           (("-q")))
+    (tramp-remote-shell         "/bin/sh")
+    (tramp-remote-shell-args    ("-c"))
+    (tramp-gw-args              (("-o" "GlobalKnownHostsFile=/dev/null")
+                                 ("-o" "UserKnownHostsFile=/dev/null")
+                                 ("-o" "StrictHostKeyChecking=no")))
+    (tramp-default-port         22)))
