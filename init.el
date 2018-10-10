@@ -30,7 +30,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (## persistent-scratch markdown-mode shx omnisharp csv-mode))))
+    (auto-complete-clang jedi ## persistent-scratch markdown-mode shx omnisharp csv-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -60,3 +60,10 @@
                                  ("-o" "UserKnownHostsFile=/dev/null")
                                  ("-o" "StrictHostKeyChecking=no")))
     (tramp-default-port         22)))
+
+;; autocomplete
+(require 'auto-complete)
+(global-auto-complete-mode t)
+
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:complete-on-dot t)                 ; optional
