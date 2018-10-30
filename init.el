@@ -30,7 +30,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (auto-complete-clang jedi ## persistent-scratch markdown-mode shx omnisharp csv-mode))))
+    (dockerfile-mode docker auto-complete-clang jedi ## persistent-scratch markdown-mode shx omnisharp csv-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
