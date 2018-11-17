@@ -30,7 +30,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (dockerfile-mode docker auto-complete-clang jedi ## persistent-scratch markdown-mode shx omnisharp csv-mode))))
+    (git-gutter dockerfile-mode docker auto-complete-clang jedi ## persistent-scratch markdown-mode shx omnisharp csv-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -38,9 +38,8 @@
  ;; If there is more than one, they won't work right.
  )
 
-
 ;; I'd love to have the bash shell hosting emacs, and emacs, to
-;; share history. I'd love to. This may do that.
+;; share history. This may do that.
 (savehist-mode 1)
 
 ;; Most used for when discarding changes in git shell
@@ -64,6 +63,10 @@
 ;; autocomplete
 (require 'auto-complete)
 (global-auto-complete-mode t)
+
+;; annotations that show changed lines for git-tracked files
+(require 'git-gutter)
+(global-git-gutter-mode)
 
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)                 ; optional
