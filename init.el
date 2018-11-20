@@ -28,9 +28,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(global-git-gutter-mode t)
  '(package-selected-packages
    (quote
-    (git-gutter dockerfile-mode docker auto-complete-clang jedi ## persistent-scratch markdown-mode shx omnisharp csv-mode))))
+    (prettier-js rust-mode git-gutter dockerfile-mode docker auto-complete-clang jedi ## persistent-scratch markdown-mode shx omnisharp csv-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -70,3 +71,10 @@
 
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:complete-on-dot t)                 ; optional
+
+;; rust autoformat
+;; must must install: $ rustup component add rustfmt-preview
+(setq rust-format-on-save t)
+;; javascript autoformat-on-save
+;; must install; $ npm install -g prettier
+(require 'prettier-js)
