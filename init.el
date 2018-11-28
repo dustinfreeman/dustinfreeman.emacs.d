@@ -21,7 +21,7 @@
 
 ;; I hate tabs!
 (setq-default indent-tabs-mode nil)
-(setq tab-width 4)
+(setq-default tab-width 4)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
