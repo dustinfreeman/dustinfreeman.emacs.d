@@ -19,10 +19,6 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
-;; I hate tabs!
-(setq-default indent-tabs-mode nil)
-(setq-default tab-width 4)
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -32,6 +28,7 @@
  '(package-selected-packages
    (quote
     (prettier-js rust-mode git-gutter dockerfile-mode docker auto-complete-clang jedi ## persistent-scratch markdown-mode shx omnisharp csv-mode))))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -39,8 +36,12 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; I'd love to have the bash shell hosting emacs, and emacs, to
-;; share history. This may do that.
+;; I hate tabs!
+(setq-default indent-tabs-mode nil)
+(setq-default tab-width 4)
+
+;; I'd love to have the bash shell hosting emacs, and emacs M-x shell, to
+;; share history in .zsh_history or similar. This may do that.
 (savehist-mode 1)
 
 ;; Most used for when discarding changes in git shell
