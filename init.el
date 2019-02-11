@@ -76,6 +76,9 @@
 ;; rust autoformat
 ;; must must install: $ rustup component add rustfmt-preview
 (setq rust-format-on-save t)
-;; javascript autoformat-on-save
+
+;; javascript autoformat 
 ;; must install; $ npm install -g prettier
 (require 'prettier-js)
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+
