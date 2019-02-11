@@ -27,8 +27,7 @@
  '(global-git-gutter-mode t)
  '(package-selected-packages
    (quote
-    (prettier-js rust-mode git-gutter dockerfile-mode docker auto-complete-clang jedi ## persistent-scratch markdown-mode shx omnisharp csv-mode))))
-
+    (magit fireplace circe tide prettier-js rust-mode git-gutter dockerfile-mode docker auto-complete-clang jedi ## persistent-scratch markdown-mode shx omnisharp csv-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
