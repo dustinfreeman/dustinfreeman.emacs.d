@@ -81,3 +81,5 @@
 (require 'prettier-js)
 (add-hook 'js2-mode-hook 'prettier-js-mode)
 
+;; magit settings
+(global-set-key (kbd "C-x g") 'magit-status)
