@@ -1,6 +1,5 @@
 ;; Dustin Freeman's .emacs.d/init.el
 ;; Created: Aug 21, 2018
-
 (load-theme 'misterioso)
 
 ;; Melpa install
@@ -13,11 +12,27 @@
   ;; For important compatibility libraries like cl-lib
   (add-to-list 'package-archives '("gnu" . "https://elpa.gnu.org/packages/")))
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+;; Init the package facility
+(require 'package)
 (package-initialize)
+;; (package-refresh-contents) ;; this line is commented 
+;; since refreshing packages is time-consuming and should be done on demand
+;; Declare packages
+(setq my-packages
+      '(git-gutter
+        auto-complete-clang
+        jedi
+        rust-mode
+        persistent-scratch
+        markdown-mode
+        omnisharp
+        csv-mode
+        prettier-js))
+;; Iterate on packages and install missing ones
+(dolist (pkg my-packages)
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
+
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -26,8 +41,7 @@
  ;; If there is more than one, they won't work right.
  '(global-git-gutter-mode t)
  '(package-selected-packages
-   (quote
-    (magit fireplace circe tide prettier-js rust-mode git-gutter dockerfile-mode docker auto-complete-clang jedi ## persistent-scratch markdown-mode shx omnisharp csv-mode))))
+   '(magit fireplace circe tide prettier-js rust-mode git-gutter dockerfile-mode docker auto-complete-clang jedi ## persistent-scratch markdown-mode shx omnisharp csv-mode)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
